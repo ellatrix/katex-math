@@ -8,6 +8,7 @@ WordPress saves math as MathML, which browsers render on their own and which wor
 - On the front end, KaTeX is loaded only on pages that contain math, and each formula is replaced by its KaTeX rendering.
 - In the editor, the Math block and inline math are shown with KaTeX as well. Only the display changes, what is saved stays the same.
 - A formula KaTeX cannot render is left to the browser's MathML.
+- Formulas keep the size the browser gives MathML, the text size, rather than KaTeX's default enlargement. A theme that wants math larger next to its body font sets `math` and `.katex` alike, for example `math, .katex { font-size: 1.1em; }`.
 
 Requires the Math block and inline math format of WordPress 7.0 or the Gutenberg plugin.
 

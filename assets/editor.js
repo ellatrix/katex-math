@@ -26,8 +26,9 @@
 
 	const ownSheet = new CSSStyleSheet();
 	ownSheet.replaceSync(
-		// The Math block already has the block spacing.
-		'.katex-display{margin:0}' +
+		// The same two overrides as on the front end: the text size rather
+		// than KaTeX's enlargement, and no margin of its own in the block.
+		'.katex{font-size:1em}.katex-display{margin:0}' +
 			// The slot is sized rather than the `<math>` in it: Firefox lays
 			// MathML out on its own terms and ignores a width on the element,
 			// a box around it is clipped by every engine.
