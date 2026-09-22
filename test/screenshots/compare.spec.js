@@ -15,7 +15,7 @@ const path = require( 'path' );
  */
 const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
 
-test.use( { viewport: { width: 800, height: 900 }, deviceScaleFactor: 2 } );
+test.use( { viewport: { width: 540, height: 900 }, deviceScaleFactor: 2 } );
 
 test( 'front end with and without the plugin @screenshots', async ( {
 	admin,
@@ -50,9 +50,24 @@ test( 'front end with and without the plugin @screenshots', async ( {
 			post.locator( active ? '.katex' : 'math' ).first()
 		).toBeVisible();
 		await page.evaluate( () => document.fonts.ready );
-		await post.screenshot( {
+		// The admin bar is fixed, and Firefox scrolls to capture a tall
+		// element, so the bar would be stamped into the image.
+		await page.addStyleTag( {
+			content: '#wpadminbar{display:none}html{margin-top:0!important}',
+		} );
+		// Without the side padding of the content column.
+		const box = await post.boundingBox();
+		const inset = 16;
+		await page.screenshot( {
 			path: path.join( dir, `${ browserName }-${ name }.png` ),
 			scale: 'device',
+			fullPage: true,
+			clip: {
+				x: box.x + inset,
+				y: box.y,
+				width: box.width - 2 * inset,
+				height: box.height,
+			},
 		} );
 	}
 	await requestUtils.activatePlugin( 'katex-math-rendering' );
