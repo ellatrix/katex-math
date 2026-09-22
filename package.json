@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"description": "Renders the math of the Math block and the inline math format with KaTeX.",
-	"license": "GPL-2.0-or-later",
+	"license": "MIT",
 	"scripts": {
 		"wp-env": "wp-env",
 		"test:e2e": "wp-scripts test-playwright",
