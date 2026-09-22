@@ -29,8 +29,11 @@ function katex_math_register_assets() {
 	// its fonts. The browser renders the MathML at the text size, so keep
 	// that: the plugin changes the typesetting, not the size, and a theme
 	// sizes `math` and `.katex` alike. A display formula also brings its own
-	// vertical margin, the Math block already has the block spacing.
-	wp_add_inline_style( 'katex-math-lib', '.katex{font-size:1em}.wp-block-math .katex-display{margin:0}' );
+	// vertical margin, the Math block already has the block spacing. The
+	// block clips vertical overflow, to scroll wide formulas, and labels over
+	// braces or arrows and deep descenders reach up to 0.35em beyond KaTeX's
+	// box, so the box gets that much room.
+	wp_add_inline_style( 'katex-math-lib', '.katex{font-size:1em}.wp-block-math .katex-display{margin:0;padding:0.35em 0}' );
 
 	wp_register_script( 'katex-math-lib', $vendor . 'katex.min.js', array(), KATEX_MATH_KATEX_VERSION, true );
 
