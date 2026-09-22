@@ -36,4 +36,4 @@ npm run test:e2e
 
 Point `.wp-env.override.json` at a local Gutenberg checkout to test against trunk.
 
-`npm run screenshots` retakes the images above from the running site, in Chromium, WebKit and Firefox.
+`npm run screenshots` retakes the images above from the running site, in Chromium, WebKit and Firefox. Their content, `test/screenshots/content.html`, is generated from a list of formulas by `test/screenshots/build-content.cjs`, run from a directory that has temml installed (a Gutenberg checkout does).
