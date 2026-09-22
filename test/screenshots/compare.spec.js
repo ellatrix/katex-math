@@ -143,16 +143,18 @@ test( 'each formula with and without the plugin @screenshots', async ( {
 		for ( const [ id, pair ] of Object.entries( boxes ) ) {
 			const box = pair[ name ];
 			const width = Math.max( pair.mathml.width, pair.katex.width );
+			// Centred on the formula, but kept within the page, which
+			// would otherwise cut the clip short (a tagged equation sits
+			// at the right edge).
+			const x = Math.min(
+				Math.max( box.x - ( width - box.width ) / 2, 0 ),
+				page.viewportSize().width - width
+			);
 			await page.screenshot( {
 				path: path.join( dir, `${ id }-${ name }.png` ),
 				scale: 'device',
 				fullPage: true,
-				clip: {
-					x: box.x - ( width - box.width ) / 2,
-					y: box.y,
-					width,
-					height: box.height,
-				},
+				clip: { x, y: box.y, width, height: box.height },
 			} );
 		}
 	}

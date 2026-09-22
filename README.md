@@ -28,13 +28,12 @@ Each formula as the browser renders the MathML on the left and as KaTeX renders 
 | `\hat{x} + \vec{v} + \widehat{abc} + \overline{z} + \tilde{n} + \dot{y}` | <img src="screenshots/chromium/07-mathml.png" width="201"> | <img src="screenshots/chromium/07-katex.png" width="201"> |
 | `\overbrace{a + b + c}^{\text{sum}} + \underbrace{d \cdot e}_{\text{product}}` | <img src="screenshots/chromium/08-mathml.png" width="149"> | <img src="screenshots/chromium/08-katex.png" width="149"> |
 | `\boxed{E = mc^2}` | <img src="screenshots/chromium/09-mathml.png" width="95"> | <img src="screenshots/chromium/09-katex.png" width="95"> |
-| `E = mc^2 \tag{1}` | <img src="screenshots/chromium/10-mathml.png" width="392"> | <img src="screenshots/chromium/10-katex.png" width="338"> |
+| `E = mc^2 \tag{1}` | <img src="screenshots/chromium/10-mathml.png" width="392"> | <img src="screenshots/chromium/10-katex.png" width="392"> |
 | `\cancel{a} + \bcancel{b} + \xcancel{c} + \sout{d}` | <img src="screenshots/chromium/11-mathml.png" width="114"> | <img src="screenshots/chromium/11-katex.png" width="114"> |
 | `A \xrightarrow{\;f\;} B \xleftarrow[\text{under}]{\text{over}} C \xrightleftharpoons{k} D` | <img src="screenshots/chromium/12-mathml.png" width="207"> | <img src="screenshots/chromium/12-katex.png" width="207"> |
 | `\begin{CD} A @>a>> B \\ @VbVV @VVcV \\ C @>>d> D \end{CD}` | <img src="screenshots/chromium/13-mathml.png" width="153"> | <img src="screenshots/chromium/13-katex.png" width="153"> |
 | `\sum_{\substack{0 < i < m \\ 0 < j < n}} P(i, j)` | <img src="screenshots/chromium/14-mathml.png" width="116"> | <img src="screenshots/chromium/14-katex.png" width="116"> |
 | `\underbrace{x_1 + x_2 + \cdots + x_n}_{n \text{ terms}} = \overbrace{y}^{\mathclap{\text{wide label here}}}` | <img src="screenshots/chromium/15-mathml.png" width="275"> | <img src="screenshots/chromium/15-katex.png" width="275"> |
-| `a \smash{\frac{1}{2}} b` | <img src="screenshots/chromium/16-mathml.png" width="43"> | <img src="screenshots/chromium/16-katex.png" width="43"> |
 
 ### Safari
 
@@ -50,13 +49,12 @@ Each formula as the browser renders the MathML on the left and as KaTeX renders 
 | `\hat{x} + \vec{v} + \widehat{abc} + \overline{z} + \tilde{n} + \dot{y}` | <img src="screenshots/webkit/07-mathml.png" width="213"> | <img src="screenshots/webkit/07-katex.png" width="213"> |
 | `\overbrace{a + b + c}^{\text{sum}} + \underbrace{d \cdot e}_{\text{product}}` | <img src="screenshots/webkit/08-mathml.png" width="149"> | <img src="screenshots/webkit/08-katex.png" width="149"> |
 | `\boxed{E = mc^2}` | <img src="screenshots/webkit/09-mathml.png" width="95"> | <img src="screenshots/webkit/09-katex.png" width="95"> |
-| `E = mc^2 \tag{1}` | <img src="screenshots/webkit/10-mathml.png" width="380"> | <img src="screenshots/webkit/10-katex.png" width="332"> |
+| `E = mc^2 \tag{1}` | <img src="screenshots/webkit/10-mathml.png" width="380"> | <img src="screenshots/webkit/10-katex.png" width="380"> |
 | `\cancel{a} + \bcancel{b} + \xcancel{c} + \sout{d}` | <img src="screenshots/webkit/11-mathml.png" width="116"> | <img src="screenshots/webkit/11-katex.png" width="116"> |
 | `A \xrightarrow{\;f\;} B \xleftarrow[\text{under}]{\text{over}} C \xrightleftharpoons{k} D` | <img src="screenshots/webkit/12-mathml.png" width="207"> | <img src="screenshots/webkit/12-katex.png" width="207"> |
 | `\begin{CD} A @>a>> B \\ @VbVV @VVcV \\ C @>>d> D \end{CD}` | <img src="screenshots/webkit/13-mathml.png" width="146"> | <img src="screenshots/webkit/13-katex.png" width="146"> |
 | `\sum_{\substack{0 < i < m \\ 0 < j < n}} P(i, j)` | <img src="screenshots/webkit/14-mathml.png" width="109"> | <img src="screenshots/webkit/14-katex.png" width="109"> |
 | `\underbrace{x_1 + x_2 + \cdots + x_n}_{n \text{ terms}} = \overbrace{y}^{\mathclap{\text{wide label here}}}` | <img src="screenshots/webkit/15-mathml.png" width="276"> | <img src="screenshots/webkit/15-katex.png" width="276"> |
-| `a \smash{\frac{1}{2}} b` | <img src="screenshots/webkit/16-mathml.png" width="43"> | <img src="screenshots/webkit/16-katex.png" width="43"> |
 
 ### Firefox
 
@@ -78,7 +76,6 @@ Each formula as the browser renders the MathML on the left and as KaTeX renders 
 | `\begin{CD} A @>a>> B \\ @VbVV @VVcV \\ C @>>d> D \end{CD}` | <img src="screenshots/firefox/13-mathml.png" width="150"> | <img src="screenshots/firefox/13-katex.png" width="150"> |
 | `\sum_{\substack{0 < i < m \\ 0 < j < n}} P(i, j)` | <img src="screenshots/firefox/14-mathml.png" width="121"> | <img src="screenshots/firefox/14-katex.png" width="121"> |
 | `\underbrace{x_1 + x_2 + \cdots + x_n}_{n \text{ terms}} = \overbrace{y}^{\mathclap{\text{wide label here}}}` | <img src="screenshots/firefox/15-mathml.png" width="276"> | <img src="screenshots/firefox/15-katex.png" width="276"> |
-| `a \smash{\frac{1}{2}} b` | <img src="screenshots/firefox/16-mathml.png" width="43"> | <img src="screenshots/firefox/16-katex.png" width="43"> |
 
 <!-- screenshots:end -->
 

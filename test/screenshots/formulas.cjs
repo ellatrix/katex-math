@@ -24,7 +24,6 @@ const blocks = [
 	'\\begin{CD} A @>a>> B \\\\ @VbVV @VVcV \\\\ C @>>d> D \\end{CD}',
 	'\\sum_{\\substack{0 < i < m \\\\ 0 < j < n}} P(i, j)',
 	'\\underbrace{x_1 + x_2 + \\cdots + x_n}_{n \\text{ terms}} = \\overbrace{y}^{\\mathclap{\\text{wide label here}}}',
-	'a \\smash{\\frac{1}{2}} b',
 ];
 
 module.exports = { inline, blocks };
