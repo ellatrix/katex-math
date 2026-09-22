@@ -9,7 +9,8 @@
 		"test:e2e": "wp-scripts test-playwright",
 		"lint:js": "wp-scripts lint-js assets test playwright.config.js",
 		"format": "wp-scripts format assets test playwright.config.js",
-		"update-katex": "bin/update-katex.sh"
+		"update-katex": "bin/update-katex.sh",
+		"screenshots": "SCREENSHOTS=1 wp-scripts test-playwright"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.58.0",

@@ -12,6 +12,16 @@ WordPress saves math as MathML, which browsers render on their own and which wor
 
 Requires the Math block and inline math format of WordPress 7.0 or the Gutenberg plugin.
 
+## What it looks like
+
+The same post, as the browser renders the MathML on the left and as KaTeX renders it on the right, at the same font size. Taken with `npm run screenshots` on macOS, where the browsers have STIX Two Math for the native rendering.
+
+| Browser | Native MathML | KaTeX |
+| --- | --- | --- |
+| Chrome | ![](screenshots/chromium-mathml.png) | ![](screenshots/chromium-katex.png) |
+| Safari | ![](screenshots/webkit-mathml.png) | ![](screenshots/webkit-katex.png) |
+| Firefox | ![](screenshots/firefox-mathml.png) | ![](screenshots/firefox-katex.png) |
+
 ## Development
 
 There is no build step. KaTeX is vendored in `vendor/katex`; `npm run update-katex [version]` updates it.
@@ -25,3 +35,5 @@ npm run test:e2e
 ```
 
 Point `.wp-env.override.json` at a local Gutenberg checkout to test against trunk.
+
+`npm run screenshots` retakes the images above from the running site, in Chromium, WebKit and Firefox.
