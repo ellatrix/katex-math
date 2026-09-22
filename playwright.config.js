@@ -34,7 +34,13 @@ module.exports = defineConfig( {
 		? { grep: /@screenshots/ }
 		: { grepInvert: /@screenshots/ } ),
 	projects: [
-		{ name: 'chromium', use: { ...devices[ 'Desktop Chrome' ] } },
+		{
+			name: 'chromium',
+			// The full build: the headless shell Playwright runs by default
+			// lays MathML out without the font's MATH table, so stretchy
+			// delimiters and limits come out wrong.
+			use: { ...devices[ 'Desktop Chrome' ], channel: 'chromium' },
+		},
 		{ name: 'webkit', use: { ...devices[ 'Desktop Safari' ] } },
 		{
 			name: 'firefox',
