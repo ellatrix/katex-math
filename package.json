@@ -11,7 +11,7 @@
 		"format": "wp-scripts format assets test playwright.config.js",
 		"update-katex": "bin/update-katex.sh",
 		"screenshots": "SCREENSHOTS=1 wp-scripts test-playwright && node test/screenshots/build-readme.cjs",
-		"plugin-zip": "git archive --format=zip --prefix=katex-math/ -o katex-math.zip HEAD katex-math.php README.md LICENSE assets vendor"
+		"plugin-zip": "git archive --format=zip --prefix=katex-math/ -o katex-math.zip HEAD katex-math.php readme.txt LICENSE assets vendor"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.58.0",

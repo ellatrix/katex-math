@@ -1,14 +1,13 @@
 /**
- * Writes the comparison tables of `screenshots/README.md` from the
- * screenshots, between the `screenshots:start` and `screenshots:end` markers:
- * one table per browser, one row per formula, with its LaTeX and the two
- * renderings.
+ * Writes the comparison tables of the readme from the screenshots, between
+ * the `screenshots:start` and `screenshots:end` markers: one table per
+ * browser, one row per formula, with its LaTeX and the two renderings.
  */
 const fs = require( 'fs' );
 const path = require( 'path' );
 const { inline, blocks } = require( './formulas.cjs' );
 
-const root = path.join( __dirname, '..', '..', 'screenshots' );
+const root = path.join( __dirname, '..', '..' );
 const browsers = [
 	[ 'chromium', 'Chrome' ],
 	[ 'webkit', 'Safari' ],
@@ -70,8 +69,8 @@ for ( const [ dir, name ] of browsers ) {
 	markdown += `\n### ${ name }\n\n| LaTeX | Native MathML | KaTeX |\n| --- | --- | --- |\n`;
 	for ( const [ source, id ] of rows ) {
 		markdown += `| ${ source } | ${ image(
-			`${ dir }/${ id }-mathml.png`
-		) } | ${ image( `${ dir }/${ id }-katex.png` ) } |\n`;
+			`screenshots/${ dir }/${ id }-mathml.png`
+		) } | ${ image( `screenshots/${ dir }/${ id }-katex.png` ) } |\n`;
 	}
 }
 
