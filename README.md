@@ -14,7 +14,7 @@ Requires the Math block and inline math format of WordPress 7.0 or the Gutenberg
 
 ## What it looks like
 
-The same post, as the browser renders the MathML on the left and as KaTeX renders it on the right, at the same font size. Taken with `npm run screenshots` on macOS, where the browsers have STIX Two Math for the native rendering.
+The same post, as the browser renders the MathML on the left and as KaTeX renders it on the right, at the same font size. Taken with `npm run screenshots` on macOS, where Chrome and Safari use STIX Two Math for the native rendering and Firefox its own layout.
 
 | Browser | Native MathML | KaTeX |
 | --- | --- | --- |
