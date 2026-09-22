@@ -44,9 +44,15 @@ test.describe( 'Inline math', () => {
 		// wrapper the editor selects.
 		await formulas.first().click();
 		await expect( latex ).toHaveValue( '\\sqrt{a^2+b^2}' );
+		// Selected, and shown as such: the highlight is the only sign, as
+		// nothing inside the wrapper is selectable.
 		await expect( formulas.first() ).toHaveAttribute(
 			'data-rich-text-format-boundary',
 			'true'
+		);
+		await expect( formulas.first() ).not.toHaveCSS(
+			'background-color',
+			'rgba(0, 0, 0, 0)'
 		);
 
 		// Straight to the other one: the popover follows.
