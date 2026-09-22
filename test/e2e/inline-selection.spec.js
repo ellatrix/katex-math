@@ -54,8 +54,27 @@ test.describe( 'Inline math', () => {
 			'background-color',
 			'rgba(0, 0, 0, 0)'
 		);
+	} );
 
-		// Straight to the other one: the popover follows.
+	test( 'hands the popover to the formula clicked next', async ( {
+		editor,
+		page,
+		browserName,
+	} ) => {
+		test.fixme(
+			browserName === 'firefox',
+			'Gutenberg 24.0: the popover keeps the first formula (fixed on trunk in WordPress/gutenberg#83370).'
+		);
+		const formulas = editor.canvas.locator( '[data-rich-text-bogus]' );
+		const latex = page.getByRole( 'textbox', {
+			name: 'LaTeX math syntax',
+		} );
+
+		await formulas.first().click();
+		await expect( latex ).toHaveValue( '\\sqrt{a^2+b^2}' );
+
+		// Straight to the other one, without going through the text in
+		// between: the popover shows that one, at its position.
 		const before = await latex.boundingBox();
 		await formulas.last().click();
 		await expect( latex ).toHaveValue( '\\frac{1}{2}' );
@@ -64,6 +83,26 @@ test.describe( 'Inline math', () => {
 			'true'
 		);
 		expect( ( await latex.boundingBox() ).x ).toBeGreaterThan( before.x );
+	} );
+
+	test( 'takes only the space of its rendering', async ( { editor } ) => {
+		const formulas = editor.canvas.locator( '[data-rich-text-bogus]' );
+		await expect
+			.poll( () =>
+				formulas.evaluateAll( ( elements ) =>
+					elements.map( ( element ) => {
+						const katex =
+							element.shadowRoot?.querySelector( '.katex' );
+						return katex
+							? Math.abs(
+									element.getBoundingClientRect().width -
+										katex.getBoundingClientRect().width
+								) < 2
+							: null;
+					} )
+				)
+			)
+			.toEqual( [ true, true ] );
 	} );
 
 	test( 'keeps its rendering while the text around it is edited', async ( {

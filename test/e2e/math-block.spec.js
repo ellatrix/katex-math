@@ -73,15 +73,14 @@ test.describe( 'Math block', () => {
 				)
 			)
 			.toBe( '2' );
-		// Not an inline box: the collapsed MathML must not add a line.
-		expect(
-			await block.evaluate( ( element ) => {
-				const math = element.querySelector( 'math' );
-				return [
-					window.getComputedStyle( math ).display,
-					math.getBoundingClientRect().height,
-				];
-			} )
-		).toEqual( [ 'block', 0 ] );
+		// The hidden MathML adds nothing to the block: no line under the
+		// rendering.
+		const heights = await block.evaluate( ( element ) => [
+			element.getBoundingClientRect().height,
+			element.shadowRoot
+				.querySelector( '.katex-display' )
+				.getBoundingClientRect().height,
+		] );
+		expect( Math.abs( heights[ 0 ] - heights[ 1 ] ) ).toBeLessThan( 2 );
 	} );
 } );

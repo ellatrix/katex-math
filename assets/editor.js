@@ -28,9 +28,13 @@
 	ownSheet.replaceSync(
 		// The Math block already has the block spacing.
 		'.katex-display{margin:0}' +
-			'slot.is-replaced::slotted(math){display:inline-block;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none}' +
+			// The slot is sized rather than the `<math>` in it: Firefox lays
+			// MathML out on its own terms and ignores a width on the element,
+			// a box around it is clipped by every engine.
+			'slot.is-replaced{display:inline-block;width:0;height:0;overflow:hidden}' +
 			// In the block an inline-level box would add an empty line.
-			':host(.wp-block-math) slot.is-replaced::slotted(math){display:block}' +
+			':host(.wp-block-math) slot.is-replaced{display:block}' +
+			'slot.is-replaced::slotted(math){opacity:0;pointer-events:none}' +
 			// Inline: the rendering takes no mouse, so a click lands on the
 			// wrapper, which the editor selects as it does for the `<math>`.
 			// Nothing in here is selectable either: Safari would otherwise
