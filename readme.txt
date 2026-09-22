@@ -1,8 +1,8 @@
 === KaTeX Math Rendering ===
 Contributors: ellatrix
 Tags: math, latex, katex, mathml
-Requires at least: 6.9
-Tested up to: 6.9
+Requires at least: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 0.1.0
 License: GPLv2 or later
@@ -18,9 +18,9 @@ WordPress supports math out of the box: it writes standard MathML, which the bro
 * A formula KaTeX cannot render is left to the browser's MathML.
 * Formulas keep the text size the browser gives MathML rather than KaTeX's default enlargement. A theme that wants math larger sets `math` and `.katex` alike.
 
-== Development ==
+== Third-party code ==
 
-There is no build step. `bin/update-katex.sh [version]` fetches a KaTeX release from npm into `vendor/katex`.
+The plugin bundles [KaTeX](https://katex.org/) 0.18.7, unmodified, in `vendor/katex`: the minified script and stylesheet and the fonts of its npm release, under the MIT license (see `vendor/katex/LICENSE`). Its source is at https://github.com/KaTeX/KaTeX. Development happens at https://github.com/ellatrix/katex-math.
 
 == Changelog ==
 
