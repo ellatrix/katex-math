@@ -55,7 +55,7 @@ function katex_math_enqueue_for_block( $block_content ) {
 
 	// The string search keeps the tag processor away from the blocks without
 	// math, which are nearly all of them.
-	if ( $enqueued || is_admin() || ! is_string( $block_content ) || false === stripos( $block_content, '<math' ) ) {
+	if ( $enqueued || false === stripos( $block_content, '<math' ) ) {
 		return $block_content;
 	}
 
