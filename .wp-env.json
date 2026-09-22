@@ -1,0 +1,8 @@
+{
+	"plugins": [
+		".",
+		"https://downloads.wordpress.org/plugin/gutenberg.latest-stable.zip"
+	],
+	"port": 8990,
+	"testsPort": 8991
+}

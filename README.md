@@ -1,0 +1,26 @@
+# KaTeX Math Rendering
+
+A WordPress plugin that renders the math of the Math block and the inline math format with [KaTeX](https://katex.org). The saved content stays MathML.
+
+WordPress saves math as MathML, which browsers render on their own and which works in feeds, email and anywhere else the content goes. This plugin is for sites that want KaTeX's typesetting on top of that.
+
+- The content is not changed. Posts keep the MathML, with the LaTeX source inside it. Deactivate the plugin and everything still renders.
+- On the front end, KaTeX is loaded only on pages that contain math, and each formula is replaced by its KaTeX rendering.
+- In the editor, the Math block and inline math are shown with KaTeX as well. Only the display changes, what is saved stays the same.
+- A formula KaTeX cannot render is left to the browser's MathML.
+
+Requires the Math block and inline math format of WordPress 7.0 or the Gutenberg plugin.
+
+## Development
+
+There is no build step. KaTeX is vendored in `vendor/katex`; `npm run update-katex [version]` updates it.
+
+The end-to-end tests run against a [wp-env](https://www.npmjs.com/package/@wordpress/env) site with the latest Gutenberg release:
+
+```sh
+npm install
+npm run wp-env start
+npm run test:e2e
+```
+
+Point `.wp-env.override.json` at a local Gutenberg checkout to test against trunk.

@@ -1,0 +1,20 @@
+{
+	"name": "katex-math",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Renders the math of the Math block and the inline math format with KaTeX.",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"wp-env": "wp-env",
+		"test:e2e": "wp-scripts test-playwright",
+		"lint:js": "wp-scripts lint-js assets test playwright.config.js",
+		"format": "wp-scripts format assets test playwright.config.js",
+		"update-katex": "bin/update-katex.sh"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.58.0",
+		"@wordpress/e2e-test-utils-playwright": "^2.0.0",
+		"@wordpress/env": "^11.15.0",
+		"@wordpress/scripts": "^35.0.0"
+	}
+}
