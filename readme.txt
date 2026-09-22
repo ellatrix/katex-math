@@ -12,15 +12,11 @@ Renders the math of the Math block and the inline math format with KaTeX.
 
 == Description ==
 
-WordPress saves math as MathML, which browsers render on their own and which works in feeds, email and anywhere else the content goes. This plugin is for sites that want KaTeX's typesetting on top of that.
+WordPress supports math out of the box: it writes standard MathML, which the browser renders. These renderings sometimes fall short, with oddly positioned strokes, thicker lines and the like, in the math fonts browsers ship with. This small plugin bundles KaTeX and uses its typesetting on the front end and in the editor, for the WordPress Math block and the inline math format. There are no separate blocks, it is an alternate rendering. To switch back to the WordPress rendering, deactivate the plugin and everything keeps working: Math blocks and inline math stay stored exactly as WordPress stores them, with both the LaTeX and the MathML in the post content.
 
-* The content is not changed. Posts keep the MathML, with the LaTeX source inside it. Deactivate the plugin and everything still renders.
-* On the front end, KaTeX is loaded only on pages that contain math, and each formula is replaced by its KaTeX rendering.
-* In the editor, the Math block and inline math are shown with KaTeX as well. Only the display changes, what is saved stays the same.
+* On the front end, KaTeX is loaded only on pages that contain math.
 * A formula KaTeX cannot render is left to the browser's MathML.
 * Formulas keep the text size the browser gives MathML rather than KaTeX's default enlargement. A theme that wants math larger sets `math` and `.katex` alike.
-
-KaTeX is bundled with the plugin, fonts included. Nothing is loaded from another site.
 
 == Development ==
 
