@@ -6,7 +6,7 @@ WordPress supports math out of the box: it writes standard MathML, which the bro
 - A formula KaTeX cannot render is left to the browser's MathML.
 - Formulas keep the size the browser gives MathML, the text size, rather than KaTeX's default enlargement. A theme that wants math larger next to its body font sets `math` and `.katex` alike, for example `math, .katex { font-size: 1.1em; }`.
 
-Requires the Math block and inline math format of WordPress 7.0 or the Gutenberg plugin.
+Requires the Math block and inline math format of WordPress 6.9 or the Gutenberg plugin.
 
 ## What it looks like
 

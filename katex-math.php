@@ -4,7 +4,7 @@
  * Plugin URI:        https://github.com/ellatrix/katex-math
  * Description:       Renders the math of the Math block and the inline math format with KaTeX. The saved content stays MathML.
  * Version:           0.1.0
- * Requires at least: 7.0
+ * Requires at least: 6.9
  * Requires PHP:      7.4
  * Author:            Ella van Durpe
  * Author URI:        https://profiles.wordpress.org/ellatrix/
