@@ -1,5 +1,5 @@
 === KaTeX Math Rendering ===
-Contributors: ellatrix
+Contributors: wordpressdotorg, ellatrix
 Tags: math, latex, katex, mathml
 Requires at least: 6.9
 Tested up to: 7.1
